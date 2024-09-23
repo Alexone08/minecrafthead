@@ -7,13 +7,13 @@ const color1Picker = document.getElementById('color1');
 const color2Picker = document.getElementById('color2');
 const imageTypeSelect = document.getElementById('imageType');
 
-let avatarImage = null; // L'immagine dell'avatar del giocatore
+let avatarImage = null; 
 
 function draw() {
     const bgColor1 = color1Picker.value;
     const bgColor2 = color2Picker.value;
 
-    // Crea un gradiente
+
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
     gradient.addColorStop(0, bgColor1);
     gradient.addColorStop(1, bgColor2);
@@ -21,9 +21,9 @@ function draw() {
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Disegna l'immagine dell'avatar (se esiste)
+   
     if (avatarImage) {
-        ctx.drawImage(avatarImage, 64, 64, 128, 128); // Dimensione e posizione dell'avatar
+        ctx.drawImage(avatarImage, 64, 64, 128, 128); 
     }
 }
 
@@ -60,4 +60,4 @@ loadAvatarBtn.addEventListener('click', () => {
 color1Picker.addEventListener('input', draw);
 color2Picker.addEventListener('input', draw);
 
-draw(); // Disegna il canvas inizialmente
+draw(); 
