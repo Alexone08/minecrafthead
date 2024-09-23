@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generatore di teste Minecraft</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .gradient-background {
+      width: 300px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .grad1 { background: linear-gradient(to right, #ff7e5f, #feb47b); }
+    .grad2 { background: linear-gradient(to right, #6a11cb, #2575fc); }
+    .grad3 { background: linear-gradient(to right, #43cea2, #185a9d); }
+    .grad4 { background: linear-gradient(to right, #ff5f6d, #ffc371); }
+
+    .player-head {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Genera la tua testa di Minecraft</h1>
+
+  <form id="mcForm">
+    <label for="username">Nome utente di Minecraft:</label><br>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="background">Scegli uno sfondo:</label><br>
+    <select id="background" name="background">
+      <option value="grad1">Gradiente 1</option>
+      <option value="grad2">Gradiente 2</option>
+      <option value="grad3">Gradiente 3</option>
+      <option value="grad4">Gradiente 4</option>
+    </select><br><br>
+
+    <button type="submit">Genera</button>
+  </form>
+
+  <div class="container" id="outputContainer">
+    <div id="outputBackground" class="gradient-background grad1">
+      <img id="playerHead" class="player-head" src="" alt="Minecraft Player Head">
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('mcForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const background = document.getElementById('background').value;
+
+      // Usa direttamente il nome del giocatore con Crafatar
+      const imgSrc = `https://crafatar.com/head/${username}?size=64`;
+
+      document.getElementById('playerHead').src = imgSrc;
+      document.getElementById('outputBackground').className = `gradient-background ${background}`;
+    });
+  </script>
+
+</body>
+</html>
