@@ -1,0 +1,63 @@
+body {
+    background: linear-gradient(135deg, #6a0dad, #8a2be2);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente */
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: rgba(50, 50, 50, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 90%; /* Larghezza responsiva */
+    max-width: 500px; /* Limita la larghezza massima */
+}
+
+.controls {
+    margin: 10px 0;
+}
+
+.avatar-section {
+    position: relative;
+    margin: 20px 0;
+}
+
+canvas {
+    border: 2px solid #fff; /* Bordo bianco attorno al canvas */
+    border-radius: 10px;
+    background: #555; /* Colore di sfondo per il canvas */
+}
+
+button {
+    padding: 10px 15px;
+    background: #9b59b6; /* Colore del pulsante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #8e44ad; /* Colore al passaggio del mouse */
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
